@@ -1,0 +1,24 @@
+{
+    "name" : "Engineer Friendly Text",
+    "identifier" : "me.leavez.engineerFriendlyText",
+    "version" : "1.0.0",
+    "description" : "make text layer's metric friendly to iOS engineer",
+    "authorEmail" : "gaojiji@gmail.com",
+    "author" : "Leavez",
+    "commands" : [
+    {
+      "script" : "script.js",
+      "handler" : "onFixRun",
+      "shortcut" : "ctrl F",
+      "name" : "Fix text margin for iOS",
+      "identifier" : "fix"
+    },
+    {
+      "script" : "script.js",
+      "handler" : "onSetLineHeight",
+      "shortcut" : "ctrl M",
+      "name" : "Set line height multiple ...",
+      "identifier" : "lineHeight"
+    }
+  ]
+}

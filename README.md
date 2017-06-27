@@ -19,4 +19,4 @@ This plug in also provide a convenient method to set line height multiple.
 
 [![Install EngineerFriendlyText with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install EngineerFriendlyText with Sketchpacks")](https://sketchpacks.com/leavez/sketch-engineer-friendly-text/install)
 
-or donwload [here](https://github.com/leavez/sketch-engineer-friendly-text/releases/latest)
+or donwload [here](https://github.com/leavez/sketch-engineer-friendly-text/releases/latest). You may give me a star 🌟 if you like it. 

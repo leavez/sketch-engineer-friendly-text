@@ -5,7 +5,9 @@ Engineer-Friendly-Text is a sketch plugin make text layer's metric friendly to i
 
 ## Why
 
-Sketch's text layer have extra margin on the outer side when set lineHeight greater than default one. This is different with text view on iOS, which make engineer hard to implement the design precisely.
+Sketch's text layer have extra margin on the outer side when set lineHeight greater than default one. This is different with text views on iOS, which make engineer hard to implement the design precisely.
+
+中文详细介绍[文章](https://zhuanlan.zhihu.com/p/27572662)
 
 ## What
 
@@ -20,3 +22,8 @@ This plug in also provide a convenient method to set line height multiple.
 [![Install EngineerFriendlyText with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install EngineerFriendlyText with Sketchpacks")](https://sketchpacks.com/leavez/sketch-engineer-friendly-text/install)
 
 or donwload [here](https://github.com/leavez/sketch-engineer-friendly-text/releases/latest). You may give me a star 🌟 if you like it. 
+
+## Changelog
+
+- 1.1: add support for Chinese font
+- 1.0: initial release

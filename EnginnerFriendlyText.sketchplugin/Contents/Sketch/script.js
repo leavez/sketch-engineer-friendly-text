@@ -41,14 +41,12 @@ function getMaskAndTextLayer(group) {
 
 
 function getFixMargin(textLayer) {
-  var attributedString = textLayer.attributedString().transformedAttributedString()
-  var font = getFontFromAttributedString(attributedString)
+  var attributedString = textLayer.attributedString().attributedString()
   var style = getParagraphStyleFromAttributedString(attributedString)
   var minimuxLineHeight = style.minimumLineHeight()
+  var font = textLayer.font()
   var lineHeight = getLineHeight(font)
-  if (lineHeight == 0) {
-    return 0
-  }
+
   if (!font.fontName().hasPrefix("SF")) {
     alert(font, "Bad Font. Plugin only valid for SanFrancisco (SF UI or SF Pro) Font family.")
   }
@@ -122,12 +120,24 @@ function onFixRun(context) {
 // --------------------- set line height -------------------------
 
 function setLineHeight(textLayer, lineHeigthMutiple) {
-  var attributedString = textLayer.attributedString().transformedAttributedString()
-  var font = getFontFromAttributedString(attributedString)
+
+  var font = textLayer.font()
   var lineHeight = getLineHeight(font)
   // sketch only render in integer line height
   let finalHeight = Math.ceil(lineHeight * lineHeigthMutiple)
   textLayer.setLineHeight(finalHeight)
+
+  // Change back the font.
+  //
+  // `setLineHeight` will change font to PingFangSC when the text is pure Chinese
+  // and font is SFUI. So we should change it back.
+  // Only use the mehtod below we can get the result we want.
+  // When using `setFont`,'setFontPostscriptName' and text is Chinese, SFUI font
+  // will automatically fall to PingFangSC.
+  var attrS = textLayer.attributedString().attributedString().mutableCopy()
+  attrS.addAttribute_value_range("NSFont", font, NSMakeRange(0,attrS.length()))
+  var newValue = MSAttributedString.alloc().initWithAttributedString(attrS)
+  textLayer.attributedString = newValue
 }
 
 function onSetLineHeight(context) {
